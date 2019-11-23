@@ -5,6 +5,14 @@ $("#currentDay").html(currentDate);
 
 $(document).ready(function() {
 
+$(".saveBtn").on("click", function() {
+    var text = $(this).siblings(".text-box").val();
+    var time = $(this).parent().attr("id");
+    
+    console.log(text, time);
+    localStorage.setItem(time, text);
+});
+
 function setColorBlock() {
     let currentHr = moment().format("HH");
     console.log(moment().format("HH"));
@@ -27,7 +35,7 @@ function setColorBlock() {
     if (currentHr < colorThis) {
         $(this).removeClass("past");
         $(this).removeClass("present");
-        $(this).addClass("fuure");
+        $(this).addClass("future");
     };
 });
     
@@ -45,17 +53,32 @@ function setColorBlock() {
         //}
     };
 
-    setInterval (function() {
     setColorBlock();
-}, 30000);
+
+    setInterval (function() {
+        setColorBlock();
+    },  5000);
 
 });
-  
-let saveBtn = $(".saveBtn");
-saveBtn.on("click", function() {
-    let timeId = $(this).attr("id");
-    let textId = $(this).parent().siblings().children(".desription").val();
-    localStorage.setItem(timeId, textId);
-})
 
 
+// function getLocalStorage() {
+//     let value = localStorage.getItem
+// }
+// let saveBtn = $(".saveBtn");
+// saveBtn.on("click", function() {
+//     let timeId = $(this).attr("id");
+//     let textId = $(this).parent().siblings().children(".desription").val();
+//     localStorage.setItem(timeId, textId);
+// })
+
+
+  $("#09 .text-box").val(localStorage.getItem("09"));
+  $("#10 .text-box").val(localStorage.getItem("10"));
+  $("#11 .text-box").val(localStorage.getItem("11"));
+  $("#12 .text-box").val(localStorage.getItem("12"));
+  $("#13 .text-box").val(localStorage.getItem("13"));
+  $("#14 .text-box").val(localStorage.getItem("14"));
+  $("#15 .text-box").val(localStorage.getItem("15"));
+  $("#16 .text-box").val(localStorage.getItem("16"));
+  $("#17 .text-box").val(localStorage.getItem("17"));
