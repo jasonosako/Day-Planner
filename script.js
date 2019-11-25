@@ -39,18 +39,7 @@ function setColorBlock() {
     };
 });
     
-   // var setColor = $(".color-rows").attr("id");
-   // console.log(setColor);
-    //$(".starting-screen").hide();
-    
-   // $(".color-rows").each(function() {
-       // console.log(".color-rows")
-      //  let rowColors = 
-    //})
    
-      //  console.log(currentHr);
-   
-        //}
     };
 
     setColorBlock();
@@ -60,18 +49,6 @@ function setColorBlock() {
     },  5000);
 
 });
-
-
-// function getLocalStorage() {
-//     let value = localStorage.getItem
-// }
-// let saveBtn = $(".saveBtn");
-// saveBtn.on("click", function() {
-//     let timeId = $(this).attr("id");
-//     let textId = $(this).parent().siblings().children(".desription").val();
-//     localStorage.setItem(timeId, textId);
-// })
-
 
   $("#09 .text-box").val(localStorage.getItem("09"));
   $("#10 .text-box").val(localStorage.getItem("10"));
